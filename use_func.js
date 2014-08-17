@@ -44,3 +44,23 @@ function subtract(o, p){
 	return o;
 }
 
+//extend empty object with o
+//if properties not in p, delete
+function intersection(o, p){
+	return resctrict(extend({}, o), p);
+}
+
+//return an array of enumerable own properties of o
+function keys(o){
+//check for type safety
+ if(!(typeof o === "object")) throw TypeError();
+ 
+ var result = [][];
+ for(var prop in o){
+	if(o.hasOwnProperty(prop)){	
+		result.push(prop);
+	}
+ }
+ return result;
+}
+
