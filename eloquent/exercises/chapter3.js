@@ -109,3 +109,125 @@ console.log(twice(10));
 
 //***********************************************************************************************************//
 
+//Rekursion
+
+function findSolution(target) {
+  //start with 1
+  function find(start, history) {
+    //1 or 1+5 or 1*3 == target?
+    if (start == target)
+      return history;
+    //is it too big to continue?
+    else if (start > target)
+      return null;
+    else
+      //try first + 5, when returned null, try * §
+      return find(start + 5, "(" + history + " + 5)") ||
+             find(start * 3, "(" + history + " * 3)");
+  }
+
+  return find(1, "1");
+}
+
+console.log(findSolution(24));
+// → (((1 * 3) + 5) * 3)
+
+//***********************************************************************************************************//
+
+
+//pass two arguments
+function printFarmInventory(cows, chickens) {
+  //define a string, if necessary convert to String
+  var cowString = String(cows);
+  //format the string
+  while (cowString.length < 3)
+    //concatenate
+    cowString = "0" + cowString;
+  //log the new string
+  console.log(cowString + " Cows");
+
+  //do the exact same thing again
+  var chickenString = String(chickens);
+  while (chickenString.length < 3)
+    chickenString = "0" + chickenString;
+  console.log(chickenString + " Chickens");
+}
+printFarmInventory(7, 11);
+
+//***********************************************************************************************************//
+
+function absVal(number){
+  if(number < 0){
+    return number * -1;
+  }
+  else{
+    return number;
+  }
+}
+
+//***********************************************************************************************************//
+
+function evenOdd(target){
+
+  if(target == 1) return "odd";
+  else if(target == 0) return "even";
+
+  //recursively call the function again if first conditions not met
+  else{
+    return evenOdd(target - 2);
+  }
+}
+
+console.log(evenOdd(17));
+console.log(evenOdd(0));
+console.log(evenOdd(34));
+console.log(evenOdd(absVal(-53)));
+
+//***********************************************************************************************************//
+
+//define function
+function countBs(string){
+  var theChar = "B";
+  var result = 0;
+  for(var i = 0; i < string.length; i++){
+    //look for char@ given positions and compare
+    if(string.charAt(i) == "B"){
+      result++;
+    }
+  }
+  return result;
+}
+
+var text = "Es war einmal ein gutes Mädchen.";
+
+console.log("There are " + countBs(text) + " Bs in the text.");
+
+function countChar(string, character){
+  var result = 0;
+  for(var i = 0; i < string.length; i++){
+    if(string.charAt(i) == character){
+      result++;
+    }
+  }
+  return result;
+}
+
+text = "Haha, huhu, oh Nein. 12% sind 11% zu viel!";
+
+
+
+console.log("There are " + countChar(text, "%") + "% chars in the text.");
+
+//***********************************************************************************************************//
+
+function min(arg1, arg2){
+  if(arg1 <= arg2){
+    return arg1;
+  }
+  else{
+    return arg2;
+  }
+};
+
+//***********************************************************************************************************//
+
