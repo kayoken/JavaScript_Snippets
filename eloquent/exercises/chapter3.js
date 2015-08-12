@@ -187,7 +187,9 @@ console.log(evenOdd(absVal(-53)));
 
 //define function
 function countBs(string){
+  //look for which char?
   var theChar = "B";
+  //
   var result = 0;
   for(var i = 0; i < string.length; i++){
     //look for char@ given positions and compare
@@ -198,7 +200,7 @@ function countBs(string){
   return result;
 }
 
-var text = "Es war einmal ein gutes Mädchen.";
+var text = "Es war ein gutes Bad.";
 
 console.log("There are " + countBs(text) + " Bs in the text.");
 
@@ -212,7 +214,7 @@ function countChar(string, character){
   return result;
 }
 
-text = "Haha, huhu, oh Nein. 12% sind 11% zu viel!";
+text = "Haha, blabla, oh Nein. 12% sind 11% zu viel!";
 
 
 
